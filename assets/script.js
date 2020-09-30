@@ -1,8 +1,13 @@
 // HTML elements getting pulled for JS function
-document.getElementById("button").onclick = function() {beginQuiz();}
+var startButton = document.getElementById("button");
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
+var timer = document.getElementById("timer")
+
+var totalSeconds = 0;
+var secondsElapsed = 0;
+var interval;
 
 // Questions to be used for game
 
@@ -39,6 +44,12 @@ var questions = [
         correct : "A",
     },
 ];
+
+// beginning the game with start button
+startButton.addEventListener("click",startQuiz) 
+
+
+
 
 
 
