@@ -10,6 +10,10 @@ var secondsElapsed = 0;
 var interval;
 
 // Questions to be used for game
+var startQuiz = () => {
+console.log("hello world")
+
+};
 
 var questions = [
     {
@@ -46,7 +50,7 @@ var questions = [
 ];
 
 // beginning the game with start button
-startButton.addEventListener("click",startQuiz) 
+startButton.addEventListener("click", startQuiz) 
 
 
 
