@@ -2,25 +2,25 @@
 var startButton = document.getElementById("button");
 var timer = document.getElementById("timer")
 var welcome = document.getElementById("welcome")
+var scores = document.getElementById("scores")
 var body = document.body;
+const questionContainerEl = document.getElementById('question-container')
+const questionEl = document.getElementById('question')
+const answerButtonsEl = document.getElementById('answer-buttons')
 
 var secondsLeft = 60;
-
+document.getElementById("question-container").style.display = "none";
 
 function startGame() {
-question1()
+questionStart()
 gameTime()
 
 };
 
-function question1(){
-    var h1El = document.createElement("h1");
-    h1El.textContent = "What is the shorthand term for JavaScript?";
-    body.appendChild(h1El);
-    h1El.setAttribute("style", "margin:auto; width:50%; text-align:center;");
-    startButton = "";
-    welcome = "";
-
+function questionStart(){
+    document.getElementById("button").style.display = "none";
+    document.getElementById("welcome").style.display = "none";
+    document.getElementById("question-container").style.display = "inline-grid";
 }
 
 function gameTime() {
@@ -35,6 +35,9 @@ function gameTime() {
     }, 1000);
 }
 
+function leaderBoard() {
+
+}
 
 var questions = [
     {
@@ -70,6 +73,11 @@ var questions = [
     },
 ];
 
+for (var i = 0; i < questions.length; i++) {
+    //this is gonna be the loop to randomize the quesitons
+    questions[Math.floor(Math.random() * questions.length)];
+}
+
 
 // beginning the game with start button
 startButton.addEventListener("click", function() {
@@ -78,6 +86,10 @@ startButton.addEventListener("click", function() {
 
 
 
+
+// code for storing the user's initials to the leader board
+ var initials = localStorage.getItem("initials");
+ localStorage.setItem("initials", initials);
 
 
 
